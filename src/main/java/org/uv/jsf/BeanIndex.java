@@ -150,3 +150,6 @@ public class BeanIndex implements Serializable {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(severity, summary, detail));
     }
 }
+
+
+
