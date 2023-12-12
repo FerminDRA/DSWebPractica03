@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.uv.jsf.Conexion;
 
+
 @ManagedBean
 @SessionScoped
 public class loginBean implements Serializable {

@@ -69,3 +69,7 @@ public class RegistroBean implements Serializable {
         return "login.xhtml"; // Redirecciona a la página de inicio.
     }
 }
+
+
+
+
