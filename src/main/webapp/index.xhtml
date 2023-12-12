@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>C R U D JSF</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <p:outputLabel for="txtClave" value="Clave"></p:outputLabel>
+                <p:inputText id="txtClave" value="#{beanIndex.clave}" required="true" />
+                <p:message for="txtClave" />
+                <br></br>
+
+                <p:outputLabel for="txtNombre" value="Nombre"></p:outputLabel>
+                <p:inputText id="txtNombre" value="#{beanIndex.nombre}" required="true" />
+                <p:message for="txtNombre" />
+                <br></br>
+
+                <p:outputLabel for="txtDireccion" value="Dirección"></p:outputLabel>
+                <p:inputText id="txtDireccion" value="#{beanIndex.direccion}" required="true" />
+                <p:message for="txtDireccion" />
+                <br></br>
+
+                <p:outputLabel for="txtTelefono" value="Teléfono"></p:outputLabel>
+                <p:inputText id="txtTelefono" value="#{beanIndex.telefono}" required="true" />
+                <p:message for="txtTelefono" />
+                <br></br>
+
+                <p:commandButton update="tblPersonas" actionListener="#{beanIndex.crearPersona}" value="Guardar" />
+
+                <h2>Registros</h2>
+                <p:dataTable id="tblPersonas" var="personas" value="#{beanIndex.personas}" rows="10" paginator="true">
+                    <p:column headerText="Clave">
+                        #{personas.clave}
+                    </p:column>
+                    <p:column headerText="Nombre">
+                        #{personas.nombre}
+                    </p:column>
+                    <p:column headerText="Dirección">
+                        #{personas.direccion}
+                    </p:column>
+                    <p:column headerText="Teléfono">
+                        #{personas.telefono}
+                    </p:column>
+                    <p:column>
+                        <p:commandButton value="Eliminar"
+                                         actionListener="#{beanIndex.eliminarPersona(personas)}"
+                            icon="pi pi-trash" />
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>

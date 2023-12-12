@@ -1,0 +1,5 @@
+loginBean.class
+org\uv\jsf\Persona.class
+org\uv\jsf\RegistroBean.class
+org\uv\jsf\BeanIndex.class
+org\uv\jsf\Conexion.class
